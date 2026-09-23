@@ -297,8 +297,7 @@ p{ margin:0; line-height:1.5; color:var(--plum-soft); font-weight:600; }
 
 /* --- Regalo --- */
 .envelope-wrap{ cursor:pointer; border:none; background:none; padding:0; }
-.envelope{ width:120px; height:88px; position:relative; }
-.envelope svg{ width:100%; height:100%; display:block; }
+.gift-image{ width:150px; height:150px; object-fit:contain; display:block; }
 .gift-msg{
   background:var(--pink-pale);
   border-radius:18px;
