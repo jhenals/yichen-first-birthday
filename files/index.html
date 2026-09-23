@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il primo compleanno di Yichen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Tutti i colori e gli stili sono in style.css -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main class="stage">
+  <audio class="invitation-audio" controls autoplay loop preload="metadata" aria-label="Musica dell'invito">
+    <source src="../Hello%20Kittys%20Paradise%20-%20Intro%20Theme%20(closed%20captions).mp3" type="audio/mpeg">
+    Il tuo browser non supporta la riproduzione audio.
+  </audio>
+  <div class="screens">
+
+    <!-- ============================================================
+         SCHERMATA 1: HOME
+         Modifica qui il nome della festeggiata e l'età.
+         ============================================================ -->
+    <section class="screen active" id="home" role="region" aria-label="Copertina invito">
+      <button class="btn" id="detailsBtn" data-goto="details">Scopri i dettagli</button>
+    </section>
+
+    <!-- ============================================================
+         SCHERMATA 2: DETTAGLI (data, ora, luogo)
+         Modifica qui la data/ora, il nome del luogo e il link Maps.
+         ============================================================ -->
+    <section class="screen" id="details" role="region" aria-label="Data e luogo">
+      <h1 style="font-size:1.4rem;">Quando & dove</h1>
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" stroke="#FF4FA1" stroke-width="2"/><path d="M3 9H21" stroke="#FF4FA1" stroke-width="2"/><path d="M8 3V6" stroke="#FF4FA1" stroke-width="2" stroke-linecap="round"/><path d="M16 3V6" stroke="#FF4FA1" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="detail-text">
+          <p class="label">Data e ora</p>
+          <p class="value">27 settembre, ore 12:00</p>  <!-- DATA E ORA -->
+        </div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22Z" stroke="#FF4FA1" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" stroke="#FF4FA1" stroke-width="2"/></svg>
+        </div>
+        <div class="detail-text">
+          <p class="label">Luogo</p>
+          <p class="value">Sakura Sushi</p>  <!-- NOME LUOGO -->
+          <p class="address">Viale Lucrezia della Valle, 18, 88100 Catanzaro CZ</p>
+        </div>
+      </div>
+      <!-- LINK GOOGLE MAPS: sostituisci l'href con un altro link se cambia il luogo -->
+      <a class="btn ghost wide maplink" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x134007d312fc670d:0x260cf59e261b8816?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener">Apri in Maps 📍</a>
+    </section>
+
+    <!-- ============================================================
+         SCHERMATA 3: RSVP
+         Il testo del pulsante e dei messaggi si modifica qui;
+         la logica di conferma è in script.js.
+         ============================================================ -->
+    <section class="screen" id="rsvp" role="region" aria-label="Conferma presenza">
+      <div class="rsvp-face">🎀</div>
+      <h1 style="font-size:1.35rem; color:var(--cream-2);">Ci sarai a festeggiare Yichen?</h1>
+      <p>Fai un salto per il suo primo compleanno!</p>
+      <div id="rsvpArea">
+        <a class="btn" id="rsvpBtn" href="https://wa.me/393778243063?text=Ciao%2C%20confermiamo%20la%20nostra%20presenza%20al%20primo%20compleanno%20di%20Yichen%21" target="_blank" rel="noopener">Conferma su WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SCHERMATA 4: REGALO
+         Modifica qui il messaggio che compare aprendo la busta.
+         ============================================================ -->
+    <section class="screen" id="gift" role="region" aria-label="Idea regalo">
+      <h1 style="font-size:1.35rem;color:var(--cream-2);">Un pensierino per Yichen</h1>
+      <button class="envelope-wrap" id="envelopeBtn" aria-expanded="false" aria-controls="giftMsg">
+        <div class="envelope">
+          <svg viewBox="0 0 120 88" aria-hidden="true">
+            <rect x="4" y="10" width="112" height="74" rx="8" fill="#FFC2E0"/>
+            <path d="M4 16 L60 58 L116 16" stroke="#FF4FA1" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="4" y="10" width="112" height="74" rx="8" fill="none" stroke="#FF4FA1" stroke-width="2.5"/>
+            <g transform="translate(60,6) rotate(0)">
+              <path d="M0 0 L-9 -6 L-9 6 Z" fill="#E4002B"/>
+              <path d="M0 0 L9 -6 L9 6 Z" fill="#E4002B"/>
+              <circle cx="0" cy="0" r="3" fill="#E4002B"/>
+            </g>
+          </svg>
+        </div>
+      </button>
+      <p style="font-size:.85rem;">Tocca la busta ✨</p>
+      <div class="gift-msg" id="giftMsg">
+        <!-- MESSAGGIO REGALO -->
+        Yichen è troppo piccola per accorgersi dei giocattoli, ma da grande le farà piacere sapere che c'eravate. Se vi va di lasciarle un pensiero, una piccola busta per il suo salvadanaio sarà un dolce regalo 💌
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Barra di navigazione: normalmente non serve modificarla -->
+  <nav class="tabs" aria-label="Navigazione invito">
+    <button class="tab active" data-goto="home" aria-label="Copertina">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 11L12 4l8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9h12v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Home
+    </button>
+    <button class="tab" data-goto="details" aria-label="Dettagli">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 9H21" stroke="currentColor" stroke-width="2"/></svg>
+      Dettagli
+    </button>
+    <button class="tab" data-goto="rsvp" aria-label="Conferma presenza">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.1C0.3 8.1 2 4 6 4c2.2 0 3.7 1.2 6 3.6C14.3 5.2 15.8 4 18 4c4 0 5.7 4.1 4 7.9C19.5 16.4 12 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      RSVP
+    </button>
+    <button class="tab" data-goto="gift" aria-label="Regalo">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M4 9h16v4H4z" stroke="currentColor" stroke-width="2"/><path d="M12 9v11" stroke="currentColor" stroke-width="2"/><path d="M12 9c-1.8 0-4-1-4-3.2C8 4.3 9 3.5 10.2 3.5 11.6 3.5 12 6 12 9Z" stroke="currentColor" stroke-width="2"/><path d="M12 9c1.8 0 4-1 4-3.2 0-1.5-1-2.3-2.2-2.3C12.4 3.5 12 6 12 9Z" stroke="currentColor" stroke-width="2"/></svg>
+      Regalo
+    </button>
+  </nav>
+</main>
+
+<!-- Tutto il comportamento interattivo è in script.js -->
+<script src="script.js"></script>
+</body>
+</html>
