@@ -83,8 +83,8 @@ body{
 .stage{
   position:relative;
   z-index:1;
-  width:min(89vw, 500px);
-  height:min(98dvh, 1350px);
+  width:min(92vw, 390px);
+  height:min(90dvh, 844px);
   border-radius:32px;
   background:var(--cream-2);
   box-shadow:var(--card-shadow);
