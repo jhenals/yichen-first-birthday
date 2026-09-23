@@ -61,7 +61,7 @@ body{
   justify-content:center;
   overflow:hidden;
   position:relative;
-  background:var(--cream) url('../bg2.png') center / cover no-repeat fixed;
+  background:var(--cream) url('bg2.png') center / cover no-repeat fixed;
 }
 
 /* Pallini decorativi fissi sullo sfondo (nessuno scroll) */
@@ -166,7 +166,7 @@ body{
   pointer-events:none;
   transition:opacity .38s ease, transform .38s ease;
 }
-#home{ background:url('../Yichen-main-2.png') center / cover no-repeat; }
+#home{ background:url('Yichen-main-2.png') center / cover no-repeat; }
 #details{ background:#FFF0F7; }
 #rsvp{ background:#FFF8E1; }
 #gift{ background:#EAF7F4; }
